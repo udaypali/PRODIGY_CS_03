@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="eel.js"></script>
+    <title>Password Complexity Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="glass-container">
+            <h1 class="title">Password Complexity Checker</h1>
+
+            <div class="password-input">
+                <input type="password" id="password" placeholder="Enter your password">
+                <button id="togglePassword" class="toggle-password">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="eye">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="password-info">
+                <span id="charCount">Characters: 0</span>
+                <button id="copyPassword" class="copy-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="copy">
+                        <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                        <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <span>Copy</span>
+                </button>
+            </div>
+
+            <div class="strength-bar-container">
+                <div id="strengthBar" class="strength-bar"></div>
+            </div>
+
+            <ul id="criteriaList" class="criteria-list"></ul>
+
+            <button id="submitButton" class="submit-button" disabled>Password not strong enough</button>
+
+            <div class="social-login">
+                <button class="social-button google">Login with Google</button>
+                <button class="social-button facebook">Login with Facebook</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

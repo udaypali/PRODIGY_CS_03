@@ -1,0 +1,245 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url("assets/background1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    /* backdrop-filter: blur(10px); */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 28rem;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.password-input {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.password-input input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #1f2937;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.password-input input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.password-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.copy-button {
+    display: flex;
+    align-items: center;
+    background-color: #ec4899;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copy-button:hover {
+    background-color: #db2777;
+}
+
+.copy-button svg {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+}
+
+.strength-bar-container {
+    width: 100%;
+    height: 0.5rem;
+    background-color: #374151;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 9999px;
+    transition: all 0.5s ease-out;
+}
+
+.criteria-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.criteria-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+.criteria-list li.met {
+    opacity: 1;
+}
+
+.criteria-list li svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit-button:hover:not(:disabled) {
+    background: linear-gradient(to right, #2563eb, #7c3aed);
+}
+
+.submit-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-button {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.social-button.google {
+    background-color: #8b5cf6;
+    border-color: #8b5cf6;
+    color: white;
+}
+
+.social-button.google:hover {
+    background-color: #7c3aed;
+    border-color: #7c3aed;
+}
+
+.social-button.facebook {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+    color: white;
+}
+
+.social-button.facebook:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
+.background {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)); /* Dark gradient with black tint */
+    backdrop-filter: blur(20px); /* Blur effect for glassmorphism */
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), /* Deeper shadow for realism */
+                0 4px 10px rgba(255, 255, 255, 0.1); /* Soft inner shadow */
+    position: relative; /* For positioning pseudo-elements */
+}
+
+/* Reflection effect */
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); /* White gradient for reflection */
+    border-radius: 30px; /* Match border radius */
+    opacity: 0.15; /* Subtle reflection effect */
+    pointer-events: none; /* Prevent blocking interaction */
+}
+
+/* Optional: Add a second gradient layer for depth */
+.background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)); /* Light black gradient for depth */
+    border-radius: 30px; /* Match border radius */
+    opacity: 0.2; /* Subtle depth effect */
+    pointer-events: none; /* Prevent blocking interaction */
+}
